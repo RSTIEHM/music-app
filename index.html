@@ -1,0 +1,171 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <script src="script.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="https://res.cloudinary.com/rjsmedia/image/upload/v1639221987/SneakerCom/favicon-32x32_zomqxk.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Spartan:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+  </head>
+  <body>
+    <div class="app">
+
+      <div class="mobile-nav-container">
+      <img
+      class="site-logo"
+      src="https://res.cloudinary.com/rjsmedia/image/upload/v1639407817/LogoMakr_j9vkdj.png"
+      alt="Logo"
+    />
+        <div class="nav-link home-link-mobile">
+          <i class="fas fa-home"></i>
+        </div>
+        <div class="nav-link search-link-mobile">
+          <i class="fas fa-search"></i>
+        </div>
+
+        <div class="nav-link your-music-mobile">
+          <i class="fas fa-file"></i>
+          <span class="your-music-mobile-span">0</span>
+        </div>
+      </div>
+
+      <!-- ---------------FIXED SIDEBAR------------- -->
+      <div class="sidebar-nav">
+ 
+          <img
+            class="site-logo"
+            src="https://res.cloudinary.com/rjsmedia/image/upload/v1639407817/LogoMakr_j9vkdj.png"
+            alt="Logo"
+          />
+  
+
+        <div class="group">
+          <div class="navItem">
+            <h3 class="nav-link search-link">
+              Search
+              <i class="fas fa-search"></i>
+            </h3>
+          </div>
+        </div>
+        <div class="group">
+          <div class="navItem">
+            <h3 class="nav-link home-link">Albums</h3>
+          </div>
+        </div>
+        <div class="group">
+          <div class="navItem navItem-playlists">
+            <h3 class="nav-link your-music-link">Playlists<span class="your-music-span">0</span</h3>
+          </div>
+        </div>
+        <!-- <div class="group">
+          <div class="navItem">
+            <h3 class="nav-link">Rich Stiehm</h3>
+          </div>
+        </div> -->
+      </div>
+      <!-- END ------------FIXED SIDEBAR-------------- -->
+
+      <!-- MAIN -->
+    
+        <div class="main-wrapper-header">
+          <div class="page-header-title">
+            <h1 class="page-name">Albums</h1>
+          </div>
+          <div class="main"></div>
+        </div>
+
+
+      <!-- END MAIN -->
+    </div>
+    <!-- END APP -->
+    <!-- -----------------NOW PLAYING------------------ -->
+    <div class="now-playing-container">
+      <div class="now-playing-bar">
+        <div class="now-playing-left">
+          <div class="content record-content">
+            <img
+              data-record=""
+              data-artist=""
+              class="record-cover"
+              src="https://res.cloudinary.com/rjsmedia/image/upload/v1639407817/LogoMakr_j9vkdj.png"
+              alt=""
+            />
+            <div class="record-info">
+              <h3 class="record-artist"></h3>
+              <p class="record-title"></p>
+            </div>
+          </div>
+        </div>
+        <div class="now-playing-center">
+          <div class="content player-controls">
+            <div class="btn-player-controls">
+              <button class="shuffle">
+                <i class="fas fa-random"></i>
+              </button>
+              <button class="prev play-prev">
+                <i class="fas fa-backward"></i>
+              </button>
+              <button class="play play-icon">
+                <i class="fas fa-play"></i>
+              </button>
+              <button class="pause pause-icon">
+                <i class="fas fa-pause"></i>
+              </button>
+              <button class="next play-next">
+                <i class="fas fa-forward"></i>
+              </button>
+              <button class="loop">
+                <i class="fas fa-retweet"></i>
+              </button>
+            </div>
+          </div>
+          <div class="progress-bar-container">
+            <span class="progress-time current">0:00</span>
+            <div class="progress-bar">
+              <input type="range" class="progress-range" min="0" max="100" value="0" step="1" ></input>
+              <div class="progress-bar-track">
+
+                <!-- <div class="progress-ball"></div> -->
+              </div>
+            </div>
+            <span class="progress-time remaining">0:00</span>
+          </div>
+        </div>
+        <div class="now-playing-center">
+          <div class="volume-container">
+            <div class="btn-player-controls">
+              <button class="volume-up">
+                <i class="fas fa-volume-up"></i>
+              </button>
+              <button class="volume-mute">
+                <i class="fas fa-volume-mute"></i>
+              </button>
+            </div>
+            <div class="volume-bar">
+              <input type="range" class="progress-range" min="0" max="100" value="0" step="1" ></input>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- -----------------END NOW PLAYING------------------ -->
+    <audio  class="audio" preload="metadata"></audio>
+    <script src="app.js"></script>
+  </body>
+</html>
