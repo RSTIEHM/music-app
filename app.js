@@ -59,17 +59,13 @@ let localState = {
   },
 };
 
-// ================================== GETTERS ===============================
 const changePageTitle = (elem, text) => {
-  // if (text === false) {
-  //   elem.style.display = 'none';
-  // } else {
-  //   elem.style.display = 'block';
-  //   elem.textContent = text;
-  // }
   elem.style.display = 'inline-block';
   elem.textContent = text;
 };
+
+// ================================== GETTERS ===============================
+
 const getAlbums = () => {
   return appState[0].data;
 };
@@ -80,6 +76,10 @@ const getArtists = () => {
 
 const getSongs = () => {
   return appState[3].data;
+};
+
+const getSongsByAlbumID = (albumID) => {
+  return getSongs().filter((song) => song.album === albumID);
 };
 
 const getSingleArtist = (id) => {
@@ -114,26 +114,18 @@ const getSongsByArtistID = (id) => {
 const getSingleSong = () => {};
 
 const getSelectedAlbum = () => {
-  let artists = getArtists();
-  let albums = getAlbums();
-  let songs = getSongs();
-
-  let foundArtist = artists.filter(
-    (artist) => artist.id === localState.userSelectedAlbum.artistID
-  );
-  let foundAlbum = albums.filter(
-    (album) => album.id === localState.userSelectedAlbum.albumID
-  );
-
-  let foundSongs = songs.filter(
-    (song) => song.album === localState.userSelectedAlbum.albumID
-  );
+  let { artistID } = localState.userSelectedAlbum;
+  let { albumID } = localState.userSelectedAlbum;
+  let foundArtist = getSingleArtist(artistID);
+  let foundAlbum = getSingleAlbum(albumID);
+  let foundSongs = getSongsByAlbumID(albumID);
 
   let foundUserSelectedAlbum = {
     artist: foundArtist[0],
     album: foundAlbum[0],
     songs: foundSongs,
   };
+
   localState.tempSelectedAlbum = foundUserSelectedAlbum;
   return localState.tempSelectedAlbum;
 };
@@ -268,6 +260,7 @@ const selectedArtistHTML = (artist) => {
 
 const selectedAlbumHTML = (album) => {
   let songsArr = album.songs.map((song, i) => {
+    // SONG LIST TRACK ===========================
     return singleSongHTML(song, i, album);
   });
 
@@ -279,6 +272,7 @@ const selectedAlbumHTML = (album) => {
   }
 
   let tempAlbum = localState.tempSelectedAlbum;
+  // CHECK TO SEE IF ALBUM ALREADY EXISTS IN PLAYLIST ===> FOR SAVE BTN
   let matched = localState.userPlayList.filter((list) => {
     return list.album.id === tempAlbum.album.id;
   });
@@ -312,7 +306,7 @@ const selectedAlbumHTML = (album) => {
             ${songsArr.join('')}          
         </div>`;
 };
-
+// SONG LIST TRACK ===========================
 const singleSongHTML = (song, i, album) => {
   return `<div class="single-album-tracks-container">
             <div class='single-album-track' data-id=${i} data-trackid=${
@@ -707,7 +701,7 @@ const toTop = () => {
 // ================= MAIN CONTAINER EVENT LISTENERS =================
 // ==================================================================
 mainContentContainer.addEventListener('click', (e) => {
-  // VIEW SINGLE ALBUM  -----> ALBUM CARD ===========================
+  // VIEW SINGLE ALBUM FROM HOME || SEARCH RESULTS PAGE  =====>
   if (
     e.target.classList.contains('single-album-card') ||
     e.target.classList.contains('search-artist-card')
@@ -844,7 +838,9 @@ mainContentContainer.addEventListener('click', (e) => {
     loadPlaylistsPage();
   }
 });
-
+// ===============================================================================
+// ===========================SEARCH PAGE EVENT LISTENERS ========================
+// ===============================================================================
 mainContentContainer.addEventListener('keyup', (e) => {
   if (e.target.classList.contains('search-input')) {
     let term = e.target.value;
