@@ -757,7 +757,7 @@ mainContentContainer.addEventListener('click', (e) => {
     e.target.classList.contains('single-album-card') ||
     e.target.classList.contains('search-artist-card')
   ) {
-    toTop();
+ 
     changePageTitle(pageName, 'Artist & Album');
     removeClassArr(navLink, 'selected');
     let id = e.target.dataset.record;
@@ -765,6 +765,7 @@ mainContentContainer.addEventListener('click', (e) => {
     setPageIds('single-page-album', localState.pageID);
     setUserSelectionToState(e);
     loadSingleAlbumPage();
+    toTop();
     if (localState.pageID == localState.currentlyPlayingAlbumIndex) {
       playingTrackHighLight();
     }
@@ -777,6 +778,7 @@ mainContentContainer.addEventListener('click', (e) => {
     localState.pageID = id;
     setPageIds('single-page-artist', localState.pageID);
     loadSingleArtistPage(id);
+    toTop();
   }
 
   // PLAY FROM SINGLE ALBUM VIEW -----> BTN ========================
@@ -829,7 +831,7 @@ mainContentContainer.addEventListener('click', (e) => {
 
   // VIEW PLAYLIST FROM SINGLE ALBUM VIEW -----> BTN =========================
   if (e.target.classList.contains('view-playlist-btn')) {
-    toTop();
+
     changePageTitle(pageName, 'Playlists');
     navLink.forEach((link) => {
       link.classList.remove('selected');
@@ -837,6 +839,7 @@ mainContentContainer.addEventListener('click', (e) => {
         link.classList.add('selected');
       }
     });
+    toTop();
     loadPlaylistsPage();
   }
 
