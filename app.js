@@ -738,6 +738,7 @@ playPrev.addEventListener('click', () => {
 const toTop = () => {
   body.scrollTo({
     top: 0,
+    behavior: 'smooth'
   });
 };
 
@@ -747,6 +748,7 @@ const toTop = () => {
 // ==================================================================
 mainContentContainer.addEventListener('click', (e) => {
   if (e.target.classList.contains('load-more')) {
+    toTop();
     addMoreAlbums();
   }
 
