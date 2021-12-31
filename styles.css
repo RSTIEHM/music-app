@@ -197,6 +197,7 @@ select {
   background-color: #242424;
   display: block;
   margin: 0 auto;
+  transform: translate(0, -95px);
 }
 .load-more:hover {
   background-color: #303030;
@@ -445,11 +446,14 @@ select {
 @media (max-width: 75em) {
   .home-index {
     grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+
+
   }
 }
 @media (max-width: 65em) {
   .home-index {
     grid-template-columns: repeat(auto-fit, minmax(0.5fr, 1fr));
+ 
   }
 }
 
