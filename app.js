@@ -57,6 +57,11 @@ let localState = {
     currentlyPlayingAlbumIndex: null,
     currentlyPlayingSongIndex: null,
   },
+  allShuffledInfo: {
+    allShuffledAlbums: [],
+    shuffledCounter: 4,
+    allAlbumsLoaded: false
+  },
 };
 
 const changePageTitle = (elem, text) => {
@@ -185,7 +190,7 @@ const getUserSelectedAlbum = () => {
 // ================================== SETTERS ===============================
 
 const setUserPlaylist = (arr) => {
-  localState.currentlyPlayingSongIndex = localState.currentlyPlayingSongIndex;
+  // localState.currentlyPlayingSongIndex = localState.currentlyPlayingSongIndex;
   localState.currentPlaylist = [];
   localState.currentPlaylist = arr;
 };
@@ -227,7 +232,6 @@ const selectedArtistHTML = (artist) => {
   });
 
   let allSongs = getSongsByArtistID(artist.id);
-  console.log(allSongs, 'ALL SONGS');
   let allSongsHTML = allSongs.map((singleSong) => {
     return `<h3 data-trackid=${singleSong.id}>${singleSong.title}</h3>`;
   });
@@ -430,6 +434,7 @@ const preLoadNowPlayingUI = () => {
 };
 
 const clearAndAppendWrapper = (mainElem, newElem, classes) => {
+  console.log('CLEARING')
   let innerWrapper = document.createElement(newElem);
   innerWrapper.className = classes;
   mainElem.innerHTML = '';
@@ -444,17 +449,56 @@ const setPageIds = (page, id) => {
   mainContentContainer.setAttribute('data-id', id);
 };
 
+const addMoreAlbums = () => {
+  let inc = 4;
+  let { shuffledCounter, allShuffledAlbums } = localState.allShuffledInfo;
+  if (shuffledCounter + inc >= allShuffledAlbums.length) {
+    if(shuffledCounter + inc === allShuffledAlbums.length) {
+      localState.allShuffledInfo.shuffledCounter = shuffledCounter + inc;
+    } else {
+      let addToCounter = allShuffledAlbums.length - shuffledCounter;
+      let final = shuffledCounter + addToCounter;
+      localState.allShuffledInfo.shuffledCounter = final;
+    }
+    loadIndexAlbums();
+    document.querySelector('.load-more').style.display = 'none';
+    localState.allShuffledInfo.allAlbumsLoaded = true;
+
+  } else {
+    localState.allShuffledInfo.shuffledCounter = shuffledCounter + inc;
+    loadIndexAlbums();
+  }
+};
+
+
 // =======================================================================
 // ======================= HOME PAGE =====================================
 // =======================================================================
-const loadIndexAlbums = (albums) => {
+const loadIndexAlbums = () => {
+  let { shuffledCounter, allShuffledAlbums } = localState.allShuffledInfo;
   clearAndAppendWrapper(mainContentContainer, 'div', 'home home-index');
+  if (allShuffledAlbums.length === 0) {
+    let shuffled = shuffleAlbums();
+    localState.allShuffledInfo.allShuffledAlbums = shuffled;
+    for (let index = 0; index < shuffledCounter; index++) {
+      const single = singleAlbumHTML(shuffled[index]);
+      renderToPage(single);
+    }
+  } else {
+    for (let index = 0; index < shuffledCounter; index++) {
+      console.log(shuffledCounter, allShuffledAlbums)
+      const single = singleAlbumHTML(allShuffledAlbums[index]);
+      renderToPage(single);
+    }
+  }
+  if(!localState.allShuffledInfo.allAlbumsLoaded) {
+    mainContentContainer.insertAdjacentHTML(
+      'beforeend',
+      '<button class="btn btn-bg-1 load-more">LOAD MORE</button>'
+    );
+  }
 
-  let shuffled = shuffleAlbums();
-  shuffled.map((album) => {
-    let single = singleAlbumHTML(album);
-    renderToPage(single);
-  });
+
   if (!localState.loaded) {
     localState.currentPlaylist = getRandomPlaylist();
     setTimeout(() => {
@@ -697,10 +741,15 @@ const toTop = () => {
   });
 };
 
+
 // ==================================================================
 // ================= MAIN CONTAINER EVENT LISTENERS =================
 // ==================================================================
 mainContentContainer.addEventListener('click', (e) => {
+  if (e.target.classList.contains('load-more')) {
+    addMoreAlbums();
+  }
+
   // VIEW SINGLE ALBUM FROM HOME || SEARCH RESULTS PAGE  =====>
   if (
     e.target.classList.contains('single-album-card') ||
