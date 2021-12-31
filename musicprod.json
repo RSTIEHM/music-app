@@ -73,6 +73,30 @@
         "genre": "1",
         "artWorkPath": "https://res.cloudinary.com/rjsmedia/image/upload/v1640030404/SONG%20ART/GETZ_GILBERTO_frgns5.jpg",
         "description": "Getz/Gilberto is considered the record that popularized bossa nova worldwide and was one of the best-selling jazz albums of all time, selling more than 2 million copies in 1964. It was included in Rolling Stone's and Vibe's lists of best albums of all time."
+      },
+      {
+        "id": "10",
+        "title": "Heaven Or Las Vegas",
+        "artist": "14",
+        "genre": "1",
+        "artWorkPath": "https://res.cloudinary.com/rjsmedia/image/upload/v1640908366/SONG%20ART/51exUtNFvTL_loe8h2.jpg",
+        "description": "Heaven or Las Vegas is the sixth studio album by Scottish alternative rock band Cocteau Twins, released on 17 September 1990 by 4AD. Despite 4AD president Ivo Watts-Russell proclaiming it one of the best-ever releases on his label, he released the group from their contract at the end of 1990 because his relationship with the band had soured."
+      },
+      {
+        "id": "11",
+        "title": "White Pepper",
+        "artist": "15",
+        "genre": "1",
+        "artWorkPath": "https://res.cloudinary.com/rjsmedia/image/upload/v1640908573/SONG%20ART/Ween-White-Pepper_hjebdh.jpg",
+        "description": "White Pepper is one of Ween's most polished albums. Songs such as 'Even If You Don't' feature radio-friendly production. Ween's bizarre sense of humour is still intact (such as on the Steely Dan send-up 'Pandy Fackler') and their hard rock roots still show as seen on 'Stroker Ace' and 'The Grobe'."
+      },
+      {
+        "id": "12",
+        "title": "Birth Of The Cool",
+        "artist": "1",
+        "genre": "1",
+        "artWorkPath": "https://res.cloudinary.com/rjsmedia/image/upload/v1640908505/SONG%20ART/MILES_BIRTH_nhxk0x.jpg",
+        "description": "Featuring unusual instrumentation and several notable musicians, the music consisted of innovative arrangements influenced by classical music techniques such as polyphony, and marked a major development in post-bebop jazz. As the title suggests, these recordings are considered seminal in the history of cool jazz. Most of them were originally released in the 10-inch 78-rpm format and are all approximately three minutes long."
       }
     ]
   },
@@ -126,6 +150,18 @@
         "name": "Getz / Gilberto",
         "img": "https://res.cloudinary.com/rjsmedia/image/upload/v1640641046/SONG%20ART/GETZ_GILBERTO_bosfg4.png",
         "bio": "Getz/Gilberto is an album by American saxophonist Stan Getz and Brazilian guitarist João Gilberto, featuring pianist and composer Antônio Carlos Jobim, who also composed many of the tracks. It was released in March 1964 by Verve Records."
+      },
+      {
+        "id": "14",
+        "name": "Cocteau Twins",
+        "img": "https://res.cloudinary.com/rjsmedia/image/upload/v1640912353/SONG%20ART/CT_BAND_zrzr5d.jpg",
+        "bio": "Cocteau Twins were a Scottish band active from 1979 to 1997. They were formed in Grangemouth by Robin Guthrie (guitars, drum machine) and Will Heggie (bass), adding Elizabeth Fraser (vocals) in 1981 and replacing Heggie with multi-instrumentalist Simon Raymonde in 1983. The group earned critical praise for their ethereal, effects-laden sound and the soprano vocals of Fraser, whose lyrics often abandon recognisable language."
+      },
+      {
+        "id": "15",
+        "name": "Ween",
+        "img": "https://res.cloudinary.com/rjsmedia/image/upload/v1640912356/SONG%20ART/WEEN_PHOTO_cucczc.jpg",
+        "bio": "Ween is an American rock band from New Hope, Pennsylvania, formed in 1984 by Aaron Freeman and Mickey Melchiondo, better known by their respective stage names, Gene and Dean Ween. Generally categorized as an alternative rock band, the band are known for their highly eclectic catalog of songs inspired by funk, soul, country, gospel, prog, psychedelia, R&B, heavy metal, punk rock, and countless more."
       }
     ]
   },
@@ -453,6 +489,94 @@
         "genre": "3",
         "duration": "4:20",
         "path": "https://res.cloudinary.com/rjsmedia/video/upload/v1640375932/SONG%20ART/YAZ_MIDNIGHT_d82zvt.m4a",
+        "albumOrder": "3",
+        "plays": "23"
+      },
+      {
+        "id": "28",
+        "title": "Iceblink Baby",
+        "artist": "14",
+        "album": "10",
+        "genre": "3",
+        "duration": "3:18",
+        "path": "https://res.cloudinary.com/rjsmedia/video/upload/v1640912306/SONG%20ART/CT_Iceblink_gkd87d.m4a",
+        "albumOrder": "3",
+        "plays": "23"
+      },
+      {
+        "id": "29",
+        "title": "Heaven Or Las Vegas",
+        "artist": "14",
+        "album": "10",
+        "genre": "3",
+        "duration": "4:58",
+        "path": "https://res.cloudinary.com/rjsmedia/video/upload/v1640912320/SONG%20ART/CT_HEAVEN_i2psej.m4a",
+        "albumOrder": "3",
+        "plays": "23"
+      },
+      {
+        "id": "30",
+        "title": "Cherry Coloured Funk",
+        "artist": "14",
+        "album": "10",
+        "genre": "3",
+        "duration": "3:12",
+        "path": "https://res.cloudinary.com/rjsmedia/video/upload/v1640912320/SONG%20ART/CT_Cherry_oiwd6h.m4a",
+        "albumOrder": "3",
+        "plays": "23"
+      },
+      {
+        "id": "31",
+        "title": "Exactly Where I'm At",
+        "artist": "15",
+        "album": "11",
+        "genre": "3",
+        "duration": "4:31",
+        "path": "https://res.cloudinary.com/rjsmedia/video/upload/v1640912310/SONG%20ART/WEEN_Exactly_ebaom1.m4a",
+        "albumOrder": "3",
+        "plays": "23"
+      },
+      {
+        "id": "32",
+        "title": "Stay Forever",
+        "artist": "15",
+        "album": "11",
+        "genre": "3",
+        "duration": "3:32",
+        "path": "https://res.cloudinary.com/rjsmedia/video/upload/v1640912315/SONG%20ART/WEEN_STAY_FORVER_cdfyew.m4a",
+        "albumOrder": "3",
+        "plays": "23"
+      },
+      {
+        "id": "33",
+        "title": "Flutes Of Chi",
+        "artist": "15",
+        "album": "11",
+        "genre": "3",
+        "duration": "3:30",
+        "path": "https://res.cloudinary.com/rjsmedia/video/upload/v1640912316/SONG%20ART/WEEN_Flutes_gbkyjz.m4a",
+        "albumOrder": "3",
+        "plays": "23"
+      },
+      {
+        "id": "34",
+        "title": "Move",
+        "artist": "1",
+        "album": "12",
+        "genre": "3",
+        "duration": "2:35",
+        "path": "https://res.cloudinary.com/rjsmedia/video/upload/v1640912315/SONG%20ART/Miles_Davis_MOVE_pbtgia.m4a",
+        "albumOrder": "3",
+        "plays": "23"
+      },
+      {
+        "id": "35",
+        "title": "Boplicity",
+        "artist": "1",
+        "album": "12",
+        "genre": "3",
+        "duration": "3:02",
+        "path": "https://res.cloudinary.com/rjsmedia/video/upload/v1640912312/SONG%20ART/Miles_Davis_BOB_whpsd0.m4a",
         "albumOrder": "3",
         "plays": "23"
       }
