@@ -176,7 +176,8 @@ select {
 }
 
 .play-btn,
-.start-btn {
+.start-btn,
+.load-more {
   background-color: #36b334;
   padding: 0.5rem 2rem;
   transition: all var(--transition);
@@ -190,6 +191,15 @@ select {
 .play-btn:hover,
 .start-btn:hover {
   background-color: #3ac238;
+}
+
+.load-more {
+  background-color: #242424;
+  display: block;
+  margin: 0 auto;
+}
+.load-more:hover {
+  background-color: #303030;
 }
 .save-btn,
 .view-playlist-btn {
